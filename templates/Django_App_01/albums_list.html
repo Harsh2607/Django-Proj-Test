@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Django App 01 - Albums List</title>
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+</head>
+<body>
+    <h3>Below is the list of albums in the database:</h3>
+    <div class="db_records">
+    {% if albums %}
+        <table>
+            <thead>
+                <th>Album_Name</th>
+                <th>Ratings</th>
+                <th>Release_Date</th>
+            </thead>
+            {% for i in albums %}
+            <tr>
+                <td>{{ i.name }}</td>
+                <td>{{ i.num_stars }}</td>
+                <td>{{ i.release_date }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No Records Found!</p>
+    {% endif %}
+    </div>
+</body>
+</html>

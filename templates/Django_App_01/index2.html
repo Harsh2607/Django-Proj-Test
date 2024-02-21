@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% extends 'Django_App_01/base.html' %}
+{% block body_block %}
+<h1>Hello!</h1>
+<h1>This is index2.html file.</h1>
+<h3>For list of albums in database, go to "albums/"</h3>
+<h3>To fill up form, go to "form-page/"</h3>
+<h3>To check model form, go to "model-form/"</h3>
+
+{% comment %} normally printing value {% endcomment %}
+<h2>{{ text }}</h2>             
+<h2>{{ value }}</h2>
+
+{% comment %} using template filter {% endcomment %}
+<h2>{{ text|upper }}</h2>       
+<h2>{{ value|add:"20" }}</h2>
+<h2>{{ text|cut:"django" }}</h2>
+
+{% endblock %}

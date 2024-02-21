@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends 'Django_App_01/base.html' %}
+
+{% load static %}
+
+{% block body_block %}
+
+<h1>Login Here!</h1>
+
+<form action="{% url 'Django_App_01:user_login' %}" method="POST">
+{% csrf_token %}
+    <label for="username">Username: </label>
+    <input type="text" name="username" placeholder="Enter username">
+
+    <label for="password">Password: </label>
+    <input type="password" name="password" placeholder="Enter password">
+
+    <input type="submit" value="Login">
+</form>
+
+{% endblock %}
